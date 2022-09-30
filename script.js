@@ -7,22 +7,34 @@ var uppercaseLetter = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','
 var number = ['1','2','3','4','5','6','7','8','9','0'];
 var specialCharacter = '!@#$%^&*./,<>?;:[]{}|=-+_)(`~'.split('');
 var myPassword = lowercaseLetter.concat(uppercaseLetter,number,specialCharacter);
-console.log (myPassword)
-
+// console.log (myPassword)
+// create random charater from the set
+var randomPassword = myPassword[Math.floor(Math.random() * myPassword.length)]
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-// When click we get a prompt for password. 
 
+// When click we get a prompt for password. 
+function passwordLength() {
+  lengthOfPassword = prompt("What is the length of your password? Must be between 8 and 128 character");
+  lengthOfPassword = Number(lengthOfPassword);
+
+  if (lengthOfPassword >= 8 && lengthOfPassword <= 128); {
+    console.prompt("You set your password length " + lengthOfPassword ".");
+  } else {
+    prompt("Please enter a number between 8 and 128.");
+    passwordLength
+  }
+}
 // Start function.
+
 
 // Ask for what criteria to include.
 
@@ -37,3 +49,20 @@ generateBtn.addEventListener("click", writePassword);
 
 
 
+
+
+
+
+
+
+
+
+
+
+// function generatePassword() {
+//   var question1 = prompt.confirm("Would you like to generate a new password?");
+//   if (question1) {
+//     console.prompt("Choose the length of password. Between 8 and 128");
+//   } else {
+//     console.prompt("Ok. Have a Great day")
+//   }
