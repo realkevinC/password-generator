@@ -31,7 +31,7 @@ function passwordLength() {
   lengthOfPassword = Number(lengthOfPassword);
 
   if (lengthOfPassword >= 8 && lengthOfPassword <= 128) {
-    console.alert("You set your password length (" + lengthOfPassword + ")." );
+    window.alert("You set your password length (" + lengthOfPassword + ")." );
   } else {
     alert("Please enter a number between 8 and 128.");
     passwordLength()
@@ -39,19 +39,24 @@ function passwordLength() {
 };
 // Ask if user whether or not to include lowercase, uppercase, numeric, and/or special characters.
 function requirement() {
-lowercaseLetter = console.confirm("Do you want to include lowercase letter?");
-uppercaseLetter = console.confirm("Do you want to include uppercase letter?");
-number = console.confirm("Do you want to include numbers?");
-specialCharacter = console.confirm("Do you want to include special characters?");
+lowercaseLetter = window.confirm("Do you want to include lowercase letter?");
+uppercaseLetter = window.confirm("Do you want to include uppercase letter?");
+number = window.confirm("Do you want to include numbers?");
+specialCharacter = window.confirm("Do you want to include special characters?");
 // Write if else to meet requirement and at least 1 character need to be selected.
-if (lowercaseLetter === false && uppercaseLetter === false && number === false && specialCharacter === false) {
-  console.alert("Please choose one or more of the following to include.")
+// myPassword = lowercaseLetter === false && uppercaseLetter === false && number === false && specialCharacter === false
+ if (myPassword === false )  {
+   window.alert("Please choose one or more of the following to include.")
   requirement()
 } else {
-  console.alert("Creating your password now.")
+  window.alert("Creating your password now.")
 };
 }
 
+function generatePassword() {
+  passwordLength()
+  requirement()
+}
 
 // Password is displayed in the page or in an alert box.
 
