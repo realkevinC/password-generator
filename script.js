@@ -22,27 +22,36 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 // When click we get a prompt for password. 
+// Start function.
+// Ask for what criteria to include.
+
+// Ask for length of password that is  more than 8 and  less than 128 character.
 function passwordLength() {
   lengthOfPassword = prompt("What is the length of your password? Must be between 8 and 128 character");
   lengthOfPassword = Number(lengthOfPassword);
 
-  if (lengthOfPassword >= 8 && lengthOfPassword <= 128); {
-    console.prompt("You set your password length " + lengthOfPassword ".");
+  if (lengthOfPassword >= 8 && lengthOfPassword <= 128) {
+    console.alert("You set your password length (" + lengthOfPassword + ")." );
   } else {
-    prompt("Please enter a number between 8 and 128.");
-    passwordLength
+    alert("Please enter a number between 8 and 128.");
+    passwordLength()
   }
-}
-// Start function.
-
-
-// Ask for what criteria to include.
-
-// Ask for length of password that is  more than 8 and  less than 128 character.
-
+};
 // Ask if user whether or not to include lowercase, uppercase, numeric, and/or special characters.
-
+function requirement() {
+lowercaseLetter = console.confirm("Do you want to include lowercase letter?");
+uppercaseLetter = console.confirm("Do you want to include uppercase letter?");
+number = console.confirm("Do you want to include numbers?");
+specialCharacter = console.confirm("Do you want to include special characters?");
 // Write if else to meet requirement and at least 1 character need to be selected.
+if (lowercaseLetter === false && uppercaseLetter === false && number === false && specialCharacter === false) {
+  console.alert("Please choose one or more of the following to include.")
+  requirement()
+} else {
+  console.alert("Creating your password now.")
+};
+}
+
 
 // Password is displayed in the page or in an alert box.
 
