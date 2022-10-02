@@ -31,7 +31,7 @@ function generatePassword() {
   if (begin){
     passwordLength();
     requirement();
-    getRandomPassword();
+    // getRandomPassword();
 
     // var generatedPassword = getRandomPassword();
     // return generatedPassword;
@@ -58,7 +58,7 @@ function generatePassword() {
     var isUppercaseLetter = window.confirm("Do you want to include uppercase letter?");
     var isNumber = window.confirm("Do you want to include numbers?");
     var isSpecialCharacter = window.confirm("Do you want to include special characters?");
-    var requirement2 = [isLowercaseLetter, isUppercaseLetter, isNumber, isSpecialCharacter]
+    // var requirement2 = [isLowercaseLetter, isUppercaseLetter, isNumber, isSpecialCharacter]
     
     // Write if else to meet requirement and at least 1 character need to be selected.
     
@@ -128,14 +128,14 @@ function generatePassword() {
     }
     // random generator
     function getRandomPassword() {
-      var myPassword = "";
       
       for (var i=0; i < lengthOfPassword; i++) {
-        myPassword += myPassword[Math.floor(Math.random() * newPassword.length)];
+        myPassword = myPassword[Math.floor(Math.random() * newPassword.length)];
       }
       
       return myPassword
     }
+    getRandomPassword()
   };
     
 }
