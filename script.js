@@ -6,7 +6,7 @@ var lowercaseLetter = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","
 var uppercaseLetter = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var number = ['1','2','3','4','5','6','7','8','9','0'];
 var specialCharacter = '!@#$%^&*./,<>?;:[]{}|=-+_)(`~'.split('');
-
+var newPassword = lowercaseLetter.concat(uppercaseLetter,number,specialCharacter)
 // create random charater from the set
 
 // Write password to the #password input
@@ -32,7 +32,11 @@ function generatePassword() {
     passwordLength();
     requirement();
     getRandomPassword();
+
+    // var generatedPassword = getRandomPassword();
+    // return generatedPassword;
     
+
   } else {
     window.alert("Ok. Maybe next time.");
   };
@@ -50,90 +54,89 @@ function generatePassword() {
   
   // Ask if user whether or not to include lowercase, uppercase, numeric, and/or special characters.
   function requirement() {
-    lowercaseLetter = window.confirm("Do you want to include lowercase letter?");
-    uppercaseLetter = window.confirm("Do you want to include uppercase letter?");
-    number = window.confirm("Do you want to include numbers?");
-    specialCharacter = window.confirm("Do you want to include special characters?");
-    var requirement2= [lowercaseLetter, uppercaseLetter, number, specialCharacter]
+    var isLowercaseLetter = window.confirm("Do you want to include lowercase letter?");
+    var isUppercaseLetter = window.confirm("Do you want to include uppercase letter?");
+    var isNumber = window.confirm("Do you want to include numbers?");
+    var isSpecialCharacter = window.confirm("Do you want to include special characters?");
+    var requirement2 = [isLowercaseLetter, isUppercaseLetter, isNumber, isSpecialCharacter]
     
     // Write if else to meet requirement and at least 1 character need to be selected.
     
-    if (lowercaseLetter === false && uppercaseLetter === false && number === false && specialCharacter === false) {
+    if (isLowercaseLetter === false && isUppercaseLetter === false && isNumber === false && isSpecialCharacter === false) {
       window.alert("Please choose one or more of the following to include.");
       requirement()
-    } else {
-      window.alert("Creating your password now.");}
-    };
-    // random generator
-    function getRandomPassword() {
-      var myPassword
-      for (var i=0; i < lengthOfPassword; i++) {
-        var randomPassword = myPassword[Math.floor(Math.random() * myPassword.length)]
-        console.log(randomPassword)
-      }
-    }
-  }
-  // function generatePassword
-    // store user selection;
-    // select yes to all
-    if (lowercaseLetter && uppercaseLetter && number && specialCharacter) {
+    } 
+    else if (isLowercaseLetter && isUppercaseLetter && isNumber && isSpecialCharacter) {
       myPassword = lowercaseLetter.concat(uppercaseLetter,number,specialCharacter);
       console.log(myPassword);
     }
     // select yes to 3
-    else if (uppercaseLetter && number && specialCharacter) {
+    else if (isUppercaseLetter && isNumber && isSpecialCharacter) {
       myPassword = uppercaseLetter.concat(number,specialCharacter);
       console.log(myPassword);
     }
-    else if (lowercaseLetter && number && specialCharacter) {
+    else if (isLowercaseLetter && isNumber && isSpecialCharacter) {
       myPassword = lowercaseLetter.concat(number,specialCharacter);
       console.log(myPassword);
-    }else if (lowercaseLetter && uppercaseLetter && specialCharacter) {
+    }else if (isLowercaseLetter && isUppercaseLetter && isSpecialCharacter) {
       myPassword = lowercaseLetter.concat(uppercaseLetter,specialCharacter);
       console.log(myPassword);
-    }else if (lowercaseLetter && uppercaseLetter && number) {
+    }else if (isLowercaseLetter && isUppercaseLetter && isNumber) {
       myPassword = lowercaseLetter.concat(uppercaseLetter,number);
       console.log(myPassword);
     }
     // select yes to 2
-    else if (lowercaseLetter && uppercaseLetter) {
+    else if (isLowercaseLetter && isUppercaseLetter) {
       myPassword = lowercaseLetter.concat(uppercaseLetter);
       console.log(myPassword);
     }
-    else if (lowercaseLetter && number) {
+    else if (isLowercaseLetter && isNumber) {
       myPassword = lowercaseLetter.concat(number);
       console.log(myPassword);
-    }else if (lowercaseLetter && specialCharacter) {
+    }else if (isLowercaseLetter && isSpecialCharacter) {
       myPassword = lowercaseLetter.concat(specialCharacter);
       console.log(myPassword);
     }
-    else if (uppercaseLetter && number) {
+    else if (isUppercaseLetter && isNumber) {
       myPassword = uppercaseLetter.concat(number);
       console.log(myPassword);
     }
-    else if (uppercaseLetter && specialCharacter) {
+    else if (isUppercaseLetter && isSpecialCharacter) {
       myPassword = uppercaseLetter.concat(specialCharacter);
       console.log(myPassword);
     }
-    else if (number && specialCharacter) {
+    else if (isNumber && isSpecialCharacter) {
       myPassword = number.concat(specialCharacter);
       console.log(myPassword);
     }
     // select 1
-    else if (lowercaseLetter){
+    else if (isLowercaseLetter){
       myPassword = lowercaseLetter;
-      console.log(lowercaseLetter)
+      console.log(myPassword)
     }
-    else if (uppercaseLetter){
+    else if (isUppercaseLetter){
       myPassword = uppercaseLetter;
-      console.log(uppercaseLetter)
+      console.log(myPassword)
     }
-    else if (number){
+    else if (isNumber){
       myPassword = number;
-      console.log(number)
+      console.log(myPassword)
     }
-    else if (specialCharacter){
+    else if (isSpecialCharacter){
       myPassword = specialCharacter;
-      console.log(specialCharacter)
+      console.log(myPassword)
     }
-    // Password is displayed in the page or in an alert box.
+    // random generator
+    function getRandomPassword() {
+      var myPassword = "";
+      
+      for (var i=0; i < lengthOfPassword; i++) {
+        myPassword += myPassword[Math.floor(Math.random() * newPassword.length)];
+      }
+      
+      return myPassword
+    }
+  };
+    
+}
+  // Password is displayed in the page or in an alert box.
