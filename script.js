@@ -127,13 +127,13 @@ function generatePassword() {
       console.log(myPassword)
     }
     // random generator
+    var password = ""
     function getRandomPassword() {
-      
       for (var i=0; i < lengthOfPassword; i++) {
-        myPassword = myPassword[Math.floor(Math.random() * newPassword.length)];
+        password += myPassword[Math.floor(Math.random() * newPassword.length)];
       }
-      
-      return myPassword
+      console.log(password)
+      return password;
     }
     getRandomPassword()
   };
