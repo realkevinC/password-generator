@@ -10,7 +10,9 @@ N/A
 
 ## Link
 
+https://realkevinc.github.io/password-generator/
 
+[!screencapture-file-Users-kevinchen-bcs-challenges-password-generator-index-html-2022-10-03-19_43_18.png](/challenges/password-generator/screencapture-file-Users-kevinchen-bcs-challenges-password-generator-index-html-2022-10-03-19_43_18.png)
 
 ## Usage
 

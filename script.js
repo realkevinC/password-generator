@@ -31,8 +31,9 @@ var specialCharacter = '!@#$%^&*./,<>?;:[]{}|=-+_)(`~'.split('');
 begin = window.confirm ('Do you want to create a new password?');
   if (begin){
     passwordLength();
-    requirement();
-    getRandomPassword();
+    var myPassword= requirement();
+    var password = getRandomPassword(myPassword);
+    return password
     
     // var generatedPassword = getRandomPassword();
     // return generatedPassword;
@@ -130,12 +131,12 @@ begin = window.confirm ('Do you want to create a new password?');
     return myPassword
   };
     // random generator
-    function getRandomPassword() {
+    function getRandomPassword(myPassword) {
       var password = ""
       for (var i=0; i < lengthOfPassword; i++) {
         password += myPassword[Math.floor(Math.random() * myPassword.length)];
       }
-      console.log(password)
+      // console.log(password)
       return password;
     }
     
