@@ -32,12 +32,11 @@ begin = window.confirm ('Do you want to create a new password?');
   if (begin){
     passwordLength();
     requirement();
-    // getRandomPassword();
+    getRandomPassword();
     
     // var generatedPassword = getRandomPassword();
     // return generatedPassword;
-    
-    
+
   } else {
     window.alert("Ok. Maybe next time.");
   };
@@ -128,17 +127,17 @@ begin = window.confirm ('Do you want to create a new password?');
       myPassword = specialCharacter;
       console.log(myPassword)
     }
+    return myPassword
+  };
     // random generator
-    var password = ""
     function getRandomPassword() {
+      var password = ""
       for (var i=0; i < lengthOfPassword; i++) {
-        password += myPassword[Math.floor(Math.random() * newPassword.length)];
+        password += myPassword[Math.floor(Math.random() * myPassword.length)];
       }
       console.log(password)
       return password;
     }
-    // getRandomPassword()
-  };
     
 }
-  // Password is displayed in the page or in an alert box.
+  // Password is displayed in the page or in an alert box
